@@ -1,9 +1,7 @@
 ```javascript
 function solution(lottos, win_nums) {
-    const matches = lottos.reduce((acc, cur) => {
-        const isMatch = win_nums.includes(cur);
-        return acc + (isMatch ? 1 : 0);
-    }, 0);
+    const win = new Set(win_nums);
+    const matches = lottos.reduce((acc, cur) => acc + (win.has(cur) ? 1 : 0), 0);
     const zeros = lottos.filter(row => row === 0).length;
     const grades = {
         0: 6,
