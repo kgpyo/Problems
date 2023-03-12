@@ -1,4 +1,4 @@
-```dotnet
+```csharp
 public class Solution {
 
     private bool IsValidSudoku(char[] board) {
